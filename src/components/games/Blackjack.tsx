@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useLanguage } from '../context/LanguageContext';
-import Confetti from 'react-confetti';
+import ReactConfetti from 'react-confetti';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface Card {
   suit: 'hearts' | 'diamonds' | 'clubs' | 'spades';
@@ -130,7 +130,7 @@ export default function Blackjack() {
 
   return (
     <div className="w-full max-w-2xl px-4 mx-auto">
-      {gameStatus === 'playerWon' && <Confetti />}
+      {gameStatus === 'playerWon' && <ReactConfetti />}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6">
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6 text-gray-800 dark:text-white">{t('blackjack.title')}</h2>
         {gameStatus !== 'playing' && (

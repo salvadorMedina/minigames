@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 
-type Game = 'tic-tac-toe' | 'click-speed' | 'rock-paper-scissors' | 'blackjack' | 'minesweeper';
+type Game = 'tic-tac-toe' | 'click-speed' | 'rock-paper-scissors' | 'blackjack' | 'minesweeper' | 'wordle';
 
 interface NavbarProps {
   currentGame: Game;
@@ -76,6 +76,16 @@ function Navbar({ currentGame, onGameChange, isDarkMode, onToggleDarkMode }: Nav
             }`}
           >
             {t('games.minesweeper')}
+          </button>
+          <button
+            onClick={() => handleGameChange('wordle')}
+            className={`px-4 py-2 rounded-lg transition-colors ${
+              currentGame === 'wordle'
+                ? 'bg-primary hover:bg-primary/80 text-white'
+                : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'
+            }`}
+          >
+            {t('games.wordle')}
           </button>
         </div>
 
@@ -199,6 +209,16 @@ function Navbar({ currentGame, onGameChange, isDarkMode, onToggleDarkMode }: Nav
                 }`}
               >
                 {t('games.minesweeper')}
+              </button>
+              <button
+                onClick={() => handleGameChange('wordle')}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  currentGame === 'wordle'
+                    ? 'bg-primary hover:bg-primary/80 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'
+                }`}
+              >
+                {t('games.wordle')}
               </button>
             </div>
           </div>

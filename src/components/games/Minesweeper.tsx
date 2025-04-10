@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactConfetti from 'react-confetti';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Minesweeper = () => {
   const { t } = useLanguage();

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 import Confetti from 'react-confetti';
 
 type Choice = 'rock' | 'paper' | 'scissors';

@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import TicTacToe from './components/TicTacToe';
-import ClickSpeed from './components/ClickSpeed';
-import RockPaperScissors from './components/RockPaperScissors';
-import Blackjack from './components/Blackjack';
-import Minesweeper from './components/Minesweeper';
+import Navbar from './components/common/Navbar';
+import TicTacToe from './components/games/TicTacToe';
+import ClickSpeed from './components/games/ClickSpeed';
+import RockPaperScissors from './components/games/RockPaperScissors';
+import Blackjack from './components/games/Blackjack';
+import Minesweeper from './components/games/Minesweeper';
+import Wordle from './components/games/Wordle';
 
-type Game = 'tic-tac-toe' | 'click-speed' | 'rock-paper-scissors' | 'blackjack' | 'minesweeper';
+type Game = 'tic-tac-toe' | 'click-speed' | 'rock-paper-scissors' | 'blackjack' | 'minesweeper' | 'wordle';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -43,6 +44,7 @@ function App() {
       {currentGame === 'rock-paper-scissors' && <RockPaperScissors />}
       {currentGame === 'blackjack' && <Blackjack />}
       {currentGame === 'minesweeper' && <Minesweeper />}
+      {currentGame === 'wordle' && <Wordle />}
     </div>
   );
 }

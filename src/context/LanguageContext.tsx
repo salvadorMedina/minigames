@@ -38,7 +38,8 @@ const translations = {
       clickSpeed: 'Click Speed',
       rockPaperScissors: 'Rock Paper Scissors',
       blackjack: 'Blackjack',
-      minesweeper: 'Minesweeper'
+      minesweeper: 'Minesweeper',
+      wordle: 'Wordle'
     },
     minesweeper: {
       title: 'Minesweeper',
@@ -62,6 +63,15 @@ const translations = {
       youWin: 'You Win! 🎉',
       dealerWins: 'Dealer Wins! 😢',
       draw: 'It\'s a Draw! 🤝'
+    },
+    wordle: {
+      title: 'Wordle',
+      invalidWord: 'Invalid word',
+      congratulations: 'Congratulations! You won!',
+      gameOver: 'Game Over! The word was: {{word}}',
+      gameOverTitle: 'Game Over',
+      endGame: 'End Game',
+      playAgain: 'Play Again'
     }
   },
   es: {
@@ -93,7 +103,8 @@ const translations = {
       clickSpeed: 'Velocidad de Clicks',
       rockPaperScissors: 'Piedra Papel o Tijeras',
       blackjack: 'Blackjack',
-      minesweeper: 'Buscaminas'
+      minesweeper: 'Buscaminas',
+      wordle: 'Wordle'
     },
     minesweeper: {
       title: 'Buscaminas',
@@ -117,6 +128,15 @@ const translations = {
       youWin: '¡Ganaste! 🎉',
       dealerWins: '¡Ganó el Crupier! 😢',
       draw: '¡Empate! 🤝'
+    },
+    wordle: {
+      title: 'Wordle',
+      invalidWord: 'Palabra no válida',
+      congratulations: '¡Felicidades! ¡Ganaste!',
+      gameOver: '¡Perdiste! La palabra era: {{word}}',
+      gameOverTitle: 'Fin del Juego',
+      endGame: 'Terminar Juego',
+      playAgain: 'Jugar de Nuevo'
     }
   },
 };
