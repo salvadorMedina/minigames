@@ -4,6 +4,8 @@
   "description": "A simple mini games using TypeScript and Tailwind",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
