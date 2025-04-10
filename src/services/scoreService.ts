@@ -1,4 +1,4 @@
-import type { GameScore, Game } from '../types/games';
+import type { GameScore } from '../types/games';
 
 const STORAGE_KEY = 'game_scores';
 
@@ -33,4 +33,4 @@ export const ScoreService = {
   clearScores: async (gameId: string): Promise<void> => {
     localStorage.removeItem(`${STORAGE_KEY}_${gameId}`);
   }
-}; 
+};

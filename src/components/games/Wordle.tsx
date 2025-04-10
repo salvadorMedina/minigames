@@ -32,6 +32,7 @@ const Wordle: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const gameContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const startNewGame = () => {
     const words = language === 'es' ? spanishWords.words : englishWords.words;
@@ -65,7 +66,15 @@ const Wordle: React.FC = () => {
     }
   }, []);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (gameOver) return;
+    const value = e.target.value.toLowerCase();
+    if (/^[a-zA-Z]*$/.test(value) && value.length <= 5) {
+      setCurrentGuess(value);
+    }
+  };
+
+  const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (gameOver) return;
 
     if (e.key === 'Enter' && currentGuess.length === 5) {
@@ -81,10 +90,6 @@ const Wordle: React.FC = () => {
         setModalMessage(t('wordle.gameOver', { word: targetWord }));
         setShowModal(true);
       }
-    } else if (e.key === 'Backspace') {
-      setCurrentGuess(currentGuess.slice(0, -1));
-    } else if (/^[a-zA-Z]$/.test(e.key) && currentGuess.length < 5) {
-      setCurrentGuess(currentGuess + e.key.toLowerCase());
     }
   };
 
@@ -113,9 +118,21 @@ const Wordle: React.FC = () => {
     <div 
       ref={gameContainerRef}
       className="flex flex-col items-center gap-4 p-4 w-full max-w-md mx-auto" 
-      onKeyDown={handleKeyPress} 
-      tabIndex={0}
+      onClick={() => inputRef.current?.focus()}
     >
+      <input
+        ref={inputRef}
+        type="text"
+        value={currentGuess}
+        onChange={handleInputChange}
+        onKeyDown={handleInputKeyDown}
+        className="absolute opacity-0 w-0 h-0"
+        maxLength={5}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
+      />
       {gameOver && modalMessage.includes('Ganaste') && (
         <Confetti 
           width={window.innerWidth} 

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import type { GameState, Game } from '../types/games';
 import { ScoreService } from '../services/scoreService';
 
@@ -68,4 +68,4 @@ export const useGameState = ({ gameId, onGameEnd }: UseGameStateProps) => {
     endGame,
     updateScore
   };
-}; 
+};

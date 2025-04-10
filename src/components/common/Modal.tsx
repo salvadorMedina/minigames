@@ -1,6 +1,5 @@
 import { useEffect, useCallback, ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { theme } from '../../constants/theme';
 
 interface ModalProps {
   isOpen: boolean;
